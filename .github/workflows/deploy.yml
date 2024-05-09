@@ -1,0 +1,58 @@
+# 部署到服务器
+name: Deploy
+
+on:
+  push:
+    branches:
+      - linzeliang
+
+jobs:
+  home:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+    steps:
+      # 检出 Git 仓库
+      - name: Check out git repository
+        uses: actions/checkout@v4.1.1
+      # 安装 Node.js
+      - name: Install Node.js
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: "18.x"
+      # 个人环境变量配置
+      - name: Init .env file
+        run: |
+          if [ ! -f .env ]; then
+            cp .env.example .env
+            echo -e "\nVITE_WEATHER_KEY=${{ secrets.ENV_VITE_WEATHER_KEY }}" >> .env
+          else
+            echo ".env file already exists. Skipping the copy step."
+          fi
+      # 安装项目依赖
+      - name: Install Dependencies
+        run: npm install
+      # 构建程序
+      - name: Build Website
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      # 上传
+      - name: Upload
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          source: ${{ vars.SOURCE }}
+          target: ${{ vars.TARGET }}
+          strip_components: 1
+      # 部署
+      - name: Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: ${{ vars.DEPLOY_SCRIPT }}
