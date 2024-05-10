@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { getAdcode, getWeather, getOtherWeather } from "@/api";
+import { getAdcode, getWeather, getOtherWeather, getIp } from "@/api";
 import { Error } from "@icon-park/vue-next";
 
 // 高德开发者 Key
@@ -70,8 +70,14 @@ const getWeatherData = async () => {
         windpower: data.condition.day_wind_power,
       };
     } else {
+      // 获取 IP
+      const ip = await getIp();
+      console.log(ip);
+      if (ip.ret !== "ok") {
+        throw "获取 IP 失败";
+      }
       // 获取 Adcode
-      const adCode = await getAdcode(mainKey);
+      const adCode = await getAdcode(mainKey, ip.data.ip);
       console.log(adCode);
       if (adCode.infocode !== "10000") {
         throw "地区查询失败";

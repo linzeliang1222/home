@@ -53,16 +53,25 @@ export const getHitokoto = async () => {
  * 天气
  */
 
+// 获取 IP 地址
+export const getIp = async () => {
+  const res = await fetch("https://myip.ipip.net/json");
+  return await res.json();
+};
+
+// 高德 API 地址
+const AMAP_RESTAPI_API = import.meta.env.VITE_AMAP_RESTAPI_API || 'https://restapi.amap.com';
+
 // 获取高德地理位置信息
-export const getAdcode = async (key) => {
-  const res = await fetch(`https://restapi.amap.com/v3/ip?key=${key}`);
+export const getAdcode = async (key, ip) => {
+  const res = await fetch(`${AMAP_RESTAPI_API}/v3/ip?key=${key}&ip=${ip}`);
   return await res.json();
 };
 
 // 获取高德地理天气信息
 export const getWeather = async (key, city) => {
   const res = await fetch(
-    `https://restapi.amap.com/v3/weather/weatherInfo?key=${key}&city=${city}`,
+    `${AMAP_RESTAPI_API}/v3/weather/weatherInfo?key=${key}&city=${city}`,
   );
   return await res.json();
 };
