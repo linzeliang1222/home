@@ -28,5 +28,15 @@
     "icon": "Fire",
     "name": "今日热榜",
     "link": "https://hot.linzeliang.com"
+  },
+  {
+    "icon": "EventNoteOutlined",
+    "name": "记事本",
+    "link": "https://notes.linzeliang.com"
+  },
+  {
+    "icon": "DeviceAnalytics",
+    "name": "网站统计",
+    "link": "https://analytics.linzeliang.com"
   }
 ]

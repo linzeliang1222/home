@@ -44,9 +44,9 @@
 import { Icon } from "@vicons/utils";
 // 可前往 https://www.xicons.org 自行挑选并在此处引入
 import { Link, CompactDisc, Cloud, Compass, Book, Fire, LaptopCode } from "@vicons/fa"; // 注意使用正确的类别
-import { ApiApp, Lock, WaveSine } from "@vicons/tabler";
+import { ApiApp, Lock, WaveSine, DeviceAnalytics } from "@vicons/tabler";
 import { Blog } from "@vicons/carbon";
-import { WbCloudyOutlined } from "@vicons/material";
+import { WbCloudyOutlined, EventNoteOutlined } from "@vicons/material";
 import { HeartPulse24Regular } from "@vicons/fluent";
 import { mainStore } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -78,7 +78,9 @@ const siteIcon = {
   Lock,
   ApiApp,
   HeartPulse24Regular,
-  WaveSine
+  WaveSine,
+  EventNoteOutlined,
+  DeviceAnalytics
 };
 
 // 链接跳转
