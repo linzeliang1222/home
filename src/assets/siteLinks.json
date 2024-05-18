@@ -38,5 +38,10 @@
     "icon": "DeviceAnalytics",
     "name": "网站统计",
     "link": "https://analytics.linzeliang.com"
+  },
+  {
+    "icon": "DrawShape20Regular",
+    "name": "Excalidraw",
+    "link": "https://draw.linzeliang.com"
   }
 ]
