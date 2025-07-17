@@ -1,13 +1,18 @@
 [
   {
     "icon": "ApiApp",
+    "name": "BrandGithub",
+    "link": "https://github.com/linzeliang1222"
+  },
+  {
+    "icon": "ApiApp",
     "name": "ChatGPT",
     "link": "https://openai.linzeliang.com"
   },
   {
     "icon": "HeartPulse24Regular",
     "name": "站点监测",
-    "link": "https://uptime.linzeliang.com"
+    "link": "https://uptime.zller.cc"
   },
   {
     "icon": "Blog",
@@ -21,8 +26,8 @@
   },
   {
     "icon": "WaveSine",
-    "name": "探针",
-    "link": "https://probe.linzeliang.com"
+    "name": "服务器监控",
+    "link": "https://server.zller.cc"
   },
   {
     "icon": "Fire",
@@ -36,12 +41,12 @@
   },
   {
     "icon": "DeviceAnalytics",
-    "name": "主页流量统计",
-    "link": "https://analytics.linzeliang.com/share/BrtcXOzBHAm0E9VN/Home"
+    "name": "个人主页统计",
+    "link": "https://umami.zller.cc/share/S8d5DzsQuv7dvX5R/www.linzeliang.com"
   },
   {
     "icon": "DrawShape20Regular",
     "name": "Excalidraw",
-    "link": "https://draw.linzeliang.com"
+    "link": "https://draw.zller.cc"
   }
 ]
