@@ -44,7 +44,7 @@
 import { Icon } from "@vicons/utils";
 // 可前往 https://www.xicons.org 自行挑选并在此处引入
 import { Link, CompactDisc, Cloud, Compass, Book, Fire, LaptopCode } from "@vicons/fa"; // 注意使用正确的类别
-import { ApiApp, Lock, WaveSine, DeviceAnalytics } from "@vicons/tabler";
+import { BrandGithub, ApiApp, Lock, WaveSine, DeviceAnalytics } from "@vicons/tabler";
 import { Blog } from "@vicons/carbon";
 import { WbCloudyOutlined, EventNoteOutlined } from "@vicons/material";
 import { HeartPulse24Regular, DrawShape20Regular } from "@vicons/fluent";
@@ -76,6 +76,7 @@ const siteIcon = {
   Fire,
   LaptopCode,
   Lock,
+  BrandGithub,
   ApiApp,
   HeartPulse24Regular,
   WaveSine,
